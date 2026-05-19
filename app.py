@@ -5,9 +5,12 @@ import plotly.express as px
 import plotly.graph_objects as go
 import joblib
 import os
+from pathlib import Path
 from streamlit_option_menu import option_menu
 from sklearn.preprocessing import StandardScaler
 import xgboost as xgb
+
+BASE_DIR = Path(__file__).parent
 
 st.set_page_config(page_title="Banking Intelligence Platform", page_icon="🏦", layout="wide", initial_sidebar_state="expanded")
 
@@ -57,20 +60,22 @@ st.markdown("""
 
 @st.cache_data
 def load_data():
-    base_path = "c:/Users/Adithya/Desktop/Unified Mentor/Customer Segmentation & Churn Pattern Analytics"
     try:
-        return pd.read_csv(os.path.join(base_path, "Final_Banking_Churn_Dataset.csv")), pd.read_csv(os.path.join(base_path, "European_Bank.csv"))
+        return (
+            pd.read_csv(BASE_DIR / "Final_Banking_Churn_Dataset.csv"),
+            pd.read_csv(BASE_DIR / "European_Bank.csv"),
+        )
     except Exception as e:
         st.error(f"Error loading datasets: {e}")
         return pd.DataFrame(), pd.DataFrame()
 
 @st.cache_resource
 def load_models():
-    base_path = "c:/Users/Adithya/Desktop/Unified Mentor/Customer Segmentation & Churn Pattern Analytics/Models"
+    models_dir = BASE_DIR / "Models"
     models = {}
     try:
         for m in ['scaler', 'pca_model', 'kmeans_model', 'random_forest', 'xgboost', 'extra_trees', 'gradient_boosting']:
-            models[m] = joblib.load(os.path.join(base_path, f"{m}.pkl"))
+            models[m] = joblib.load(models_dir / f"{m}.pkl")
     except Exception as e:
         st.warning(f"Models loading warning: {e}")
     return models
