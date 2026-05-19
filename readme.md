@@ -9,7 +9,7 @@
 🎥 https://youtu.be/Yul4KxifPks?si=sX0Ugm8JTdJwVgVh
 
 ### Research Report  
-🔗 https://doi.org/your-doi-link
+🔗 https://doi.org/10.5281/zenodo.20283400
 
 ---
 
