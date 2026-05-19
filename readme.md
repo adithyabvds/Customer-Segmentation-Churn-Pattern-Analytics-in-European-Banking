@@ -3,10 +3,10 @@
 ## Live Demo & Project Video
 
 ### Streamlit Dashboard  
-🔗 [https://your-streamlit-link.streamlit.app/](https://eu-churn-and-ret.streamlit.app/)
+🔗 https://eu-churn-and-ret.streamlit.app/
 
 ### Project Demonstration Video  
-🎥 [https://youtu.be/your-video-link](https://youtu.be/Yul4KxifPks?si=sX0Ugm8JTdJwVgVh)
+🎥 https://youtu.be/Yul4KxifPks?si=sX0Ugm8JTdJwVgVh
 
 ### Research Report  
 🔗 https://doi.org/your-doi-link
